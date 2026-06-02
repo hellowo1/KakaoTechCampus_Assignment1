@@ -65,6 +65,23 @@ header h1 {
     transform: scale(0.85);
 }
 
+/* 오늘로 가기 버튼 */
+.today-button {
+    background-color: #672be0;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px 12px;
+    transition: background-color 0.2s ease;
+}
+
+.today-button:hover {
+    background-color: #5222b3;
+}
+
 /* 주간 뷰 섹션 스타일 */
 .week-view-section {
     margin-bottom: 24px;

@@ -12,6 +12,7 @@ const filterButtons = document.querySelectorAll('.filter-button');
 const dateDisplay = document.getElementById('date-display');
 const prevDateButton = document.getElementById('prev-date-button');
 const nextDateButton = document.getElementById('next-date-button');
+const todayButton = document.getElementById('today-button');
 const weekDisplay = document.getElementById('week-display');
 const prevWeekButton = document.getElementById('prev-week-button');
 const nextWeekButton = document.getElementById('next-week-button');
@@ -131,6 +132,14 @@ function changeToPreviousDate() {
 
 function changeToNextDate() {
     selectedDate.setDate(selectedDate.getDate() + 1);
+    updateDateDisplay();
+    updateWeekDisplay();
+    renderTodos();
+}
+
+function changeToToday() {
+    selectedDate = new Date();
+    weekStartDate = getWeekStartDate(new Date());
     updateDateDisplay();
     updateWeekDisplay();
     renderTodos();
@@ -293,6 +302,7 @@ todoInput.addEventListener('keypress', (e) => {
 filterButtons.forEach(button => button.addEventListener('click', handleFilterClick));
 prevDateButton.addEventListener('click', changeToPreviousDate);
 nextDateButton.addEventListener('click', changeToNextDate);
+todayButton.addEventListener('click', changeToToday);
 prevWeekButton.addEventListener('click', changeToPreviousWeek);
 nextWeekButton.addEventListener('click', changeToNextWeek);
 
